@@ -483,7 +483,7 @@ button:focus {
   }*/
 }
 .header .header__main .header__logo h1 {
-  font-size: 35px;
+  font-size: 55px;
   font-weight: 500;
   color: #fff;
   line-height: 1;
@@ -492,9 +492,12 @@ button:focus {
 .header .header__main .header__logo p {
   color: #fff;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.header .header__main .header__logo p.smaller {
+  font-size: 18px;
 }
 .header .header__down {
   background: url("../img/header/arrow-down.png") 0 0/100% no-repeat;
@@ -531,6 +534,7 @@ button:focus {
   color: #000;
   font-size: 35px;
   margin-bottom: 15px;
+  font-weight: 500;
   /*display: inline-flex;
   left: 50%;
   transform: translate(-50%, 0);*/
@@ -544,6 +548,15 @@ button:focus {
       bottom: -20%;
       background-color: $third-color;
   }*/
+}
+.information .information__block .information__figure.hidden {
+  display: none;
+}
+.information .information__block .information__figure.hidden {
+  display: none;
+}
+.information .information__block .information__figure.visible {
+  display: block;
 }
 .information .information__block .information__dot {
   margin-right: 5px;
@@ -1844,7 +1857,13 @@ button:focus {
     font-size: 32px !important;
   }
   .header .header__logo h1 {
-    font-size: 32px !important;
+    font-size: 45px !important;
+  }
+  .header .header__logo p {
+    font-size: 16px !important;
+  }
+  .header .header__logo p.smaller {
+    font-size: 15px !important;
   }
 
   .title-mb {
@@ -2245,6 +2264,15 @@ button:focus {
   }
   .header .header__logo {
     left: 40px !important;
+  }
+  .header .header__logo h1 {
+    font-size: 40px !important;
+  }
+  .header .header__logo p {
+    font-size: 15px !important;
+  }
+  .header .header__logo p.smaller {
+    font-size: 14px !important;
   }
   .header .header__burgwrapper {
     right: 40px !important;

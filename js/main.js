@@ -240,3 +240,36 @@ writingAll('school__title');
 writingAll('slider__titlefirst');
 writingAll('slider__titlefirst'); 
 writingAll('class-teachers__title'); 
+
+
+
+
+
+function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      total: t,
+      days: days,
+    };
+  }
+  function initializeClock(endtime) {
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+  
+      if (t.total <= 0) {
+        document.getElementById("date").className.add("hidden");
+        document.getElementById("date").className.add("visible");
+        clearInterval(timeinterval);
+        return true;
+      }
+      document.getElementById("date").innerHTML = t.days;
+    }
+  
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+  
+  //var deadline = "January 01 2018 00:00:00 GMT+0300"; //for Ukraine
+  var deadline = new Date(Date.parse(new Date(2021, 4, 31))); // for endless timer
+  initializeClock(deadline);

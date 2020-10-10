@@ -24,9 +24,9 @@
             <div class="header__item header__item_4"></div>
             <div class="header__item header__item_5"></div>
         </div>
-        <div class="header__main d-flex justify-content-between align-items-center">
-            <div class="header__logo d-flex flex-column align-items-center wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s">
-                <p>ЖЗСШ №16</p>
+        <div class="header__main d-flex justify-content-between align-items-start">
+            <div class="header__logo d-flex flex-column align-items-center justify-content-center wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s">
+                <p class="smaller">ЖЗСШ №16</p>
                 <h1>11-А</h1>
                 <p>2020-2021</p>
             </div>
@@ -83,13 +83,13 @@
                 <div class="col-lg-4 col-6 mt">
                     <div class="information__block wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
                         <div class="information__text">
-                            <div class="information__figure spincrement text-center">35</div>
+                            <div class="information__figure spincrement text-center" id="date"></div>
                             <div class="information__dots d-flex justify-content-center align-items-center">
                                 <div class="information__dot"></div>
                                 <div class="information__dot"></div>
                                 <div class="information__dot"></div>
                             </div>
-                            <div class="information__data text-center">учнів в класі</div>
+                            <div class="information__data text-center">днів до випуску</div>
                         </div>
                     </div>
                 </div>
@@ -106,6 +106,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-6 mt">
+                    <div class="information__block wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="information__text">
+                            <div class="information__figure spincrement text-center">16</div>
+                            <div class="information__dots d-flex justify-content-center align-items-center">
+                                <div class="information__dot"></div>
+                                <div class="information__dot"></div>
+                                <div class="information__dot"></div>
+                            </div>
+                            <div class="information__data text-center">кількість предметів</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-6 mt">
+                    <div class="information__block wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="information__text">
+                            <div class="information__figure spincrement text-center">35</div>
+                            <div class="information__dots d-flex justify-content-center align-items-center">
+                                <div class="information__dot"></div>
+                                <div class="information__dot"></div>
+                                <div class="information__dot"></div>
+                            </div>
+                            <div class="information__data text-center">учнів в класі</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="col-lg-4 col-6 mt">
                     <div class="information__block wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
                         <div class="information__text">
@@ -133,32 +160,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-6 mt">
-                    <div class="information__block wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="information__text">
-                            <div class="information__figure spincrement text-center">13</div>
-                            <div class="information__dots d-flex justify-content-center align-items-center">
-                                <div class="information__dot"></div>
-                                <div class="information__dot"></div>
-                                <div class="information__dot"></div>
-                            </div>
-                            <div class="information__data text-center">учнів приєдналося після 9-го класу</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-6 mt">
-                    <div class="information__block wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="information__text">
-                            <div class="information__figure spincrement text-center">5</div>
-                            <div class="information__dots d-flex justify-content-center align-items-center">
-                                <div class="information__dot"></div>
-                                <div class="information__dot"></div>
-                                <div class="information__dot"></div>
-                            </div>
-                            <div class="information__data text-center">учнів покинуло після 9-го класу</div>
-                        </div>
-                    </div>
-                </div>
+                
+                
             </div>
         </div>
     </section>
@@ -3927,7 +3930,7 @@
                             <img src="img/teachers/math.jpg" alt="" class="img-fluid teachers__photo">
                         </div>
                         <div class="teachers__subject d-flex justify-content-center align-items-center">
-                            <p class="text-center">Алгебра / Геометрія</p>
+                            <p class="text-center">Математика</p>
                         </div>
                         <div class="teachers__line"></div>
                         <p class="teachers__surname text-center">Міхєєва</p>

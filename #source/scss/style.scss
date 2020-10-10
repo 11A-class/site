@@ -419,7 +419,7 @@ button:focus {
                 }
             }*/
             h1 {
-                font-size: 35px;
+                font-size: 55px;
                 font-weight: 500;
                 color: #fff; 
                 line-height: 1;
@@ -428,9 +428,12 @@ button:focus {
             p {
                 color: #fff;
                 font-weight: 500;
-                font-size: 14px;
+                font-size: 20px;
                 line-height: 1;
                 text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+                &.smaller {
+                    font-size: 18px;
+                }
             }
         }
         /*& .menu__progress {
@@ -480,6 +483,16 @@ button:focus {
             color: #000;
             font-size: 35px;
             margin-bottom: 15px;
+            font-weight: 500;
+            &.hidden {
+                display: none;
+            }
+            &.hidden {
+                display: none;
+            }
+            &.visible {
+                display: block;
+            }
             /*display: inline-flex;
             left: 50%;
             transform: translate(-50%, 0);*/
@@ -1834,8 +1847,16 @@ button:focus {
                 font-size: 32px !important;
             }
         }
-        & &__logo h1 {
-            font-size: 32px !important;
+        & .header__logo {
+            h1 {
+                font-size: 45px !important;
+            }
+            p {
+                font-size: 16px !important;
+                &.smaller {
+                    font-size: 15px !important;
+                }
+            }
         }
     }  
     .title-mb {
@@ -2287,6 +2308,15 @@ button:focus {
         }
         & &__logo {
             left: 40px !important;
+            h1 {
+                font-size: 40px !important;
+            }
+            p {
+                font-size: 15px !important;
+                &.smaller {
+                    font-size: 14px !important;
+                }
+            }
         }
         & &__burgwrapper {
             right: 40px !important;
