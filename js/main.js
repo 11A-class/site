@@ -239,7 +239,8 @@ writingAll('teachers__title');
 writingAll('school__title'); 
 writingAll('slider__titlefirst');
 writingAll('slider__titlefirst'); 
-writingAll('class-teachers__title'); 
+writingAll('class-teachers__title');
+writingAll('favcabinets__title');
 
 
 

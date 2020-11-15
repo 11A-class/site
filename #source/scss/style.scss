@@ -744,7 +744,7 @@ button:focus {
     opacity: 0;
     visibility: hidden;
     transition: all 0.8s ease 0s;
-    z-index: 999;
+    z-index: 1001;
     overflow-y: auto;
     overflow-x: hidden;
     &.open {
@@ -1019,6 +1019,25 @@ button:focus {
                         }
                     }
                 }
+            & .popuphover__main {
+                width: 100%;
+                & .popuphover__item {
+                    display: flex;
+                    justify-content: center;
+                    & .popuphover__image {
+                        width: 80%;
+                        &.vertical {
+                            width: 45%;
+                        }
+                        &.less-vertical {
+                            width: 55%;
+                        }
+                        &.wider {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
             & .popup__close {
                 position: absolute;
                 right: 20px;
@@ -1090,6 +1109,89 @@ button:focus {
 
 .zoom {
     overflow: hidden;
+    position: relative;
+}
+
+/*.class-teachers__photo:hover + .hover-block {
+    top: 0%;
+}*/
+
+.hover__block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*&:hover ~ .class-teachers__photo {
+        transform: scale(1.05);
+    }*/
+    &:hover.top:after {
+        top: 0;
+    }
+    &:hover .hover__button.top {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover.bottom:after {
+        bottom: 0;
+    }
+    &:hover .hover__button.bottom {
+        bottom: 50%;
+    }
+    &.top:after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0.8;
+        transition: all 0.8s ease 0s;
+        z-index: 999;
+    }
+    &.bottom:after {
+        content: '';
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.6;
+        transition: all 0.8s ease 0s;
+        z-index: 999;
+    }
+    & .hover__button {
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        height: 42px;
+        border: 1px solid #fff;
+        transition: all 0.8s ease 0s;
+        z-index: 1000;
+        background: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        transform: translate(-50%, 50%);
+        min-width: 120px;
+        &:hover {
+            border: 1px solid transparent;
+            color: #000;
+            background: #f4f7f9;
+            opacity: 0.9;
+        }
+        &.top {
+            top: -50%;
+        }
+        &.bottom {
+            bottom: -50%;  
+        }
+    }
 }
 
 .class-teachers {
@@ -1104,9 +1206,11 @@ button:focus {
             transition: all 0.8s ease 0s;
             background-color: #fff;
             box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 500px 0px;
+            display: block;
             &:hover {
-                transform: scale(1.05);
+                
             }
+            position: relative;
         }
         & .class-teachers__period {
             margin-top: 30px;
@@ -1455,8 +1559,28 @@ button:focus {
                 width: 15%;
             }
         }
+    }   
+}
+
+.favcabinets {
+    margin-top: $pt;
+    & &__block {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
+        padding: 25px 25px 40px 25px;
+        & .favcabinets__image {
+            width: 100%;
+            border-radius: $br;
+            transition: all 0.8s ease 0s;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        & .favcabinets__floor {
+            font-weight: 500;
+            font-size: 20px;
+            margin-top: 30px;
+        }
     }
-    
 }
 
 .heart {
@@ -1668,6 +1792,63 @@ button:focus {
      
 }
 
+.floor {
+    & &__block {
+        width: 100%;
+        padding-top: 30px;
+        img {
+            width: 65%;
+        }
+    }
+    & &__number {
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 30px;
+    }
+    & &__cabinets {
+        margin-top: 20px;
+        & .floor__button {
+            width: 140px;
+            height: 42px;
+            font-size: 14px;
+            background-color: #fff;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin: 0 auto;
+            color: #000;
+            border: 1px solid #000;
+            transition: all 0.4s ease 0s;
+            &:hover {
+                border: 1px solid transparent;
+                background-color: #f4f7f9;
+            }
+        }
+        a:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5), :nth-child(6), :nth-child(7) {
+            margin-left: 20px;
+        }
+    }
+    .home {
+        width: 250px;
+        height: 42px;
+        font-size: 14px;
+        background-color: #fff;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin: 0 auto;
+        color: #000;
+        border: 1px solid #000;
+        transition: all 0.4s ease 0s;
+        margin-top: 35px;
+        margin-bottom: 70px;
+        &:hover {
+            border: 1px solid transparent;
+            background-color: #f4f7f9;
+        }
+    }
+}
+
+
+
 
 
 
@@ -1692,6 +1873,34 @@ button:focus {
 
 
 // АДАПТАЦІЯ
+
+@media (max-width: 1601px) {
+    .popup {
+        & .popuphover__image {
+            width: 70% !important;
+            &.vertical {
+                width: 38% !important;
+            }
+            &.less-vertical {
+                width: 48% !important;
+            }
+            &.wider {
+                width: 95% !important;
+            }
+        }
+        .popupcouple__photo {
+            width: 70% !important;
+            &.vertical {
+                width: 50% !important;
+            }
+        }
+        & .popup__content {
+            & .cab__photo {
+                width: 68% !important;
+            }
+        }
+    }
+}
 
 @media (max-width: 1367px) /*and (min-width: 1025px)*/ {
     $pt: 120px;
@@ -1742,6 +1951,25 @@ button:focus {
             padding-bottom: 25px !important;
         }
     }
+    .floor {
+        & .floor__button {
+            width: 130px !important;
+            height: 38px !important;
+            font-size: 13px !important;
+        }
+        & .home {
+            width: 240px !important;
+            height: 38px !important;
+            font-size: 13px !important;
+        }
+    }
+    .hover__block {
+        & .hover__button {
+            height: 38px !important;
+            font-size: 13px !important;
+            min-width: 110px !important;
+        }
+    }
     .popup {
         & &__information {
             font-size: 16px !important;
@@ -1757,10 +1985,28 @@ button:focus {
         }
         & &__content {
             padding: 80px !important;
+            & .cab__photo {
+                width: 60% !important;
+                &.teachcouple {
+                    width: 49% !important;
+                }
+            }
         }
         & &__photo {
             max-width: 250px !important;
             height: auto !important;
+        }
+        & .popuphover__image {
+            width: 65% !important;
+            &.vertical {
+                width: 35% !important;
+            }
+            &.less-vertical {
+                width: 45% !important;
+            }
+            &.wider {
+                width: 95% !important;
+            }
         }
         & .popupcouple__photo {
             width: 65% !important;
@@ -1768,12 +2014,7 @@ button:focus {
                 width: 45% !important;
             }
         }
-        & .cab__photo {
-            width: 60% !important;
-            &.teachcouple {
-                width: 49% !important;
-            }
-        }
+        
         & .achievement__main {
             padding: 20px !important;
             & .achievement__block {
@@ -1792,7 +2033,7 @@ button:focus {
             padding: 73px 25px 80px 25px !important;
         }
     }
-    .students, .class-teachers, .slider, .school, .vanta, .couple, .teachers, .heart, .words, .video, .footer {
+    .students, .class-teachers, .slider, .school, .vanta, .couple, .teachers, .heart, .words, .video, .footer, .favcabinets {
         margin-top: $pt !important;
     }
     .students__next, .slider__next {
@@ -1822,11 +2063,19 @@ button:focus {
             margin-top: 30px !important;
         }
     }
+    .floor {
+        & &__cabinets {
+            & a:nth-child(7) {
+                margin-left: 0px !important;
+                margin-top: 20px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 1025px) /*and (min-width: 769px)*/ {
     $pt: 110px;
-    .students, .class-teachers, .slider, .school, .vanta, .couple, .teachers, .heart, .words, .video, .footer {
+    .students, .class-teachers, .slider, .school, .vanta, .couple, .teachers, .heart, .words, .video, .footer, .favcabinets {
         margin-top: $pt !important;
     }
     .header {
@@ -1878,6 +2127,13 @@ button:focus {
             font-size: 30px !important;
         }
     }
+    .hover__block {
+        & .hover__button {
+            height: 38px !important;
+            font-size: 13px !important;
+            min-width: 110px !important;
+        }
+    }
     .students {
         & &__block {
             width: 25% !important;
@@ -1925,7 +2181,6 @@ button:focus {
         & .cab__photo {
             width: 70% !important;
         }
-        
     }
     .class-teachers {
         & &__surname {
@@ -2002,6 +2257,13 @@ button:focus {
         }
         & &__logo {
             margin-right: 150px;
+        }
+    }
+    .floor {
+        & &__block {
+            img {
+                width: 80%;
+            }
         }
     }
 }
@@ -2126,6 +2388,19 @@ button:focus {
             }  
         }
     }
+    .floor {
+        & &__cabinets {
+            & a:nth-child(7) {
+                margin-left: 20px !important;
+            }
+            & a:nth-child(6), :nth-child(5) {
+                margin-top: 20px !important;
+            }
+            & a:nth-child(5) {
+                margin-left: 0px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 769px) {
@@ -2185,10 +2460,31 @@ button:focus {
                     margin-bottom: 2% !important;
                 }
             }
-            & .popupcouple__photo {
+            & .cab__number {
+                font-size: 18px !important;
+            }
+            /*& .popupcouple__photo {
                 width: 80% !important;
                 &.vertical {
                     width: 55% !important;
+                }
+            }*/
+            & .popuphover__image {
+                width: 100% !important;
+                &.vertical {
+                    width: 60% !important;
+                }
+                &.less-vertical {
+                    width: 70% !important;
+                }
+                &.wider {
+                    width: 100% !important;
+                }
+            }
+            & .popupcouple__photo {
+                width: 100% !important;
+                &.vertical {
+                    width: 75% !important;
                 }
             }
             & .popup__info {
@@ -2222,6 +2518,13 @@ button:focus {
             margin-top: 50px !important;
         }
     }
+    .floor {
+        & &__block {
+            img {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -2247,6 +2550,7 @@ button:focus {
             }
         }
     }
+    
     .teachers {
         .col-lg-3:nth-child(3) {
             margin-top: 30px;
@@ -2256,12 +2560,34 @@ button:focus {
                 padding: 71px 25px 80px 25px !important;
             }
         }
-    }  
+    }
+    .favcabinets {
+        & .favcabinets__col:nth-child(3) {
+            margin-top: 30px !important;
+        }
+    }
+    .floor {
+        & &__cabinets {
+            & a:nth-child(7) {
+                margin-left: 0px !important;
+            }
+            & a:nth-child(6), :nth-child(5) {
+                margin-top: 20px !important;
+            }
+            & a:nth-child(5) {
+                margin-left: 20px !important;
+            }
+            & a:nth-child(4) {
+                margin-top: 20px !important;
+                margin-left: 0px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 650px) {
     $pt: 100px;
-    .students, .class-teachers, .slider, .school, .vanta, .couple, .teachers, .heart, .words, .video, .footer {
+    .students, .class-teachers, .slider, .school, .vanta, .couple, .teachers, .heart, .words, .video, .footer, .favcabinets {
         margin-top: $pt !important;
     }
     .header {
@@ -2286,6 +2612,7 @@ button:focus {
             }
         }*/
     }
+    
 }
 
 @media (max-width: 575px) {
@@ -2345,6 +2672,9 @@ button:focus {
                 right: 15px !important;
                 top: 15px !important;
             }
+            & .cab__number {
+                font-size: 16px !important;
+            }
         }
         & &__photo {
             margin-bottom: 40px !important;
@@ -2352,6 +2682,7 @@ button:focus {
         & &__row.popup__row_last {
             margin-bottom: 30px !important;
         }
+
     }
     .class-teachers {
         & .adaptive__mt:nth-child(3) {
@@ -2380,6 +2711,11 @@ button:focus {
     .teachers {
         .col-lg-3:nth-child(2) {
             margin-top: 30px;
+        }
+    }
+    .favcabinets {
+        & .favcabinets__col:nth-child(2) {
+            margin-top: 30px !important;
         }
     }
 }
@@ -2455,6 +2791,32 @@ button:focus {
                         font-size: 16px !important;
                     }
                 }
+            }
+        }
+    }
+    .floor {
+        & &__cabinets {
+            & a:nth-child(7) {
+                margin-left: 0px !important;
+            }
+            & a:nth-child(6) {
+                margin-left: 20px !important;
+            }
+            & .floor__button {
+                width: 150px !important;
+            }
+            & a:nth-child(5) {
+                margin-left: 0px !important;
+            }
+            /*& a:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5), :nth-child(6), :nth-child(7) {
+                margin-left: 15px !important;
+            }*/
+            & a:nth-child(4) {
+                margin-left: 20px !important;
+            }
+            & a:nth-child(3) {
+                margin-top: 20px !important;
+                margin-left: 0px !important;
             }
         }
     }
@@ -2568,6 +2930,32 @@ button:focus {
             }
         }
     } 
+}
+
+@media (max-width: 350px) {
+    .floor {
+        & &__cabinets {
+            & a:nth-child(6) {
+                margin-left: 0px !important;
+            }
+            & .floor__button {
+                width: 170px !important;
+            }
+            & a:nth-child(5) {
+                margin-left: 0px !important;
+            }
+            & a:nth-child(4) {
+                margin-left: 0px !important;
+            }
+            & a:nth-child(2) {
+                margin-top: 20px !important;
+                margin-left: 0px !important;
+            }
+            & a:nth-child(1) {
+                margin-left: 0px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 330px) {

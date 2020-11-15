@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Улюблені кабінети</title>
+</head>
+<body>
+
+    <section class="floor">
+        <div class="floor__block d-flex justify-content-center">
+            <img src="../img/floors/first floor.png" alt="" class="floor__image img-fluid">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="floor__number text-center">Перший поверх ЖЗСШ №16</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <div class="floor__cabinets d-flex justify-content-center flex-wrap">
+                        <a href="#popup-t-eng-2" class="popup-link"><button class="floor__button">Кабінет №3</button></a>
+                        <a href="#floor-1-19" class="popup-link"><button class="floor__button">Кабінет №19</button></a>
+                        <a href="#floor-1-20" class="popup-link"><button class="floor__button">Кабінет №20</button></a>
+                        <a href="#floor-1-21" class="popup-link"><button class="floor__button">Кабінет №21</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <a href="../index.html"><button class="home">Повернутися на головну</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wrapper">
+        <div id="popup-t-eng-2" class="popup">
+            <div class="popup__body">
+                <div class="popup__content d-flex">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center align-items-center flex-column">
+                                <p class="cab__number">Кабінет №4 (англійська мова)</p>
+                                <img src="../img/cabinets/eng-2.jpg" alt="" class="img-fluid cab__photo">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="popup__close close-popup"><div class="close-icon"></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="floor-1-19" class="popup">
+            <div class="popup__body">
+                <div class="popup__content d-flex">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center align-items-center flex-column">
+                                <p class="cab__number">Кабінет №19 (інформатика)</p>
+                                <img src="../img/cabinets/19.jpg" alt="" class="img-fluid cab__photo">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="popup__close close-popup"><div class="close-icon"></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="floor-1-20" class="popup">
+            <div class="popup__body">
+                <div class="popup__content d-flex">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center align-items-center flex-column">
+                                <p class="cab__number">Кабінет №20 (трудове навчання)</p>
+                                <img src="../img/cabinets/20.jpg" alt="" class="img-fluid cab__photo">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="popup__close close-popup"><div class="close-icon"></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="floor-1-21" class="popup">
+            <div class="popup__body">
+                <div class="popup__content d-flex">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center align-items-center flex-column">
+                                <p class="cab__number">Кабінет №21 (трудове навчання)</p>
+                                <img src="../img/cabinets/21.jpg" alt="" class="img-fluid cab__photo">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="popup__close close-popup"><div class="close-icon"></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const popupLinks = document.querySelectorAll('.popup-link');
+        const body = document.querySelector('body');
+        const lockPadding = document.querySelectorAll('.lock-padding');
+
+        let unlock = true;
+
+        const timeout = 800;
+        const timeoutForButtonTop = 1200;
+
+        if (popupLinks.length > 0) {
+            for (let index = 0; index < popupLinks.length; index++) {
+                const popupLink = popupLinks[index];
+                popupLink.addEventListener('click', (e) => {
+                    const popupName = popupLink.getAttribute('href').replace('#', '');
+                    const curentPopup = document.getElementById(popupName);
+                    popupOpen(curentPopup);
+                    e.preventDefault();
+                });
+            }
+        }
+
+        const popupCloseIcon = document.querySelectorAll('.close-popup');
+        if (popupCloseIcon.length > 0) {
+            for (let index = 0; index < popupCloseIcon.length; index++) {
+                const el = popupCloseIcon[index];
+                el.addEventListener('click', (e) => {
+                    popupClose(el.closest('.popup'));
+                    e.preventDefault();
+                });
+            }
+        }
+
+        function popupOpen(curentPopup) {
+            if (curentPopup && unlock) {
+                const popupActive = document.querySelector('.popup.open');
+                if (popupActive) {
+                    popupClose(popupActive, false);
+                } else {
+                    bodyLock();
+                }
+                curentPopup.classList.add('open');
+                curentPopup.addEventListener('click', (e) => {
+                    if (!e.target.closest('.popup__content')) {
+                        popupClose(e.target.closest('.popup'));
+                    }
+                });
+            }
+        }
+
+        function popupClose(popupActive, doUnlock = true) {
+
+            if (unlock) {
+                popupActive.classList.remove('open');
+                if (doUnlock) {
+                    bodyUnlock();
+                }
+            }
+        }
+
+        function bodyLock() {
+            const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+            
+            if (lockPadding.length > 0) {
+                for (let index = 0; index < lockPadding.length; index++) {
+                    const el = lockPadding[index];
+                    el.getElementsByClassName.paddingRight = lockPaddingValue;
+                }
+            }
+
+            body.style.paddingRight = lockPaddingValue;
+            body.classList.add('lock');
+
+            unlock = false;
+            setTimeout(function () {
+                unlock = true;
+            }, timeout);
+        }
+
+        function bodyUnlock() {
+            setTimeout(function () {
+                if (lockPadding.length > 0) {
+                    for (let index = 0; index < lockPadding.length; index++) {
+                        const el = lockPadding[index];
+                        el.style.paddingRight = '0px';
+                    }
+                } 
+                body.style.paddingRight = '0px';
+                body.classList.remove('lock');
+            }, timeout);
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.which === 27) {
+                const popupActive = document.querySelector('.popup.open');
+                popupClose(popupActive);
+            }
+        });
+
+        (function () {
+            // проверяем поддержку
+            if (!Element.prototype.closest) {
+                // реализуем
+                Element.prototype.closest = function (css) {
+                    var node = this;
+                    while (node) {
+                        if (node.matches(css)) return node;
+                        else node = node.parentElement;
+                    }
+                    return null;
+                };
+            }
+        })();
+        (function () {
+            // проверяем поддержку
+            if (!Element.prototype.matches) {
+                // определяем свойство
+                Element.prototype.matches = Element.prototype.matchesSelector ||
+                Element.prototype.webkitMatchesSelector ||
+                Element.prototype.mozMatchesSelector ||
+                Element.prototype.msMatchesSelector;
+            }
+        })();
+    </script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
